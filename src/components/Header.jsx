@@ -10,34 +10,45 @@ const HeaderWrapper = styled.div`
         padding: 0;  
         color: ${theme1.AccentColor} 
     }
-    position: relative;
-    z-index: 99;
-    width: 100%;
-    height: 60px;
-    background: ${theme1.BackgroundColor};
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    >.logoWrapper{
+    >.placeholderHeader{
         position: relative;
-        display: inline-block;
-        padding-bottom: 2px;
-        padding-left: 10px;
+        width: 100%;
+        height: 60px;
     }
-    >.navbarWrapper{
-        padding-right: 10px;
+    >.fixedHeader{
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        height: 60px;
+        background: ${theme1.BackgroundColor};
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >.logoWrapper{
+            position: relative;
+            display: inline-block;
+            padding-bottom: 2px;
+            padding-left: 10px;
+        }
+        >.navbarWrapper{
+            padding-right: 10px;
+        }
     }
 `
-
-
-export default function Header() {
-  return (
+        
+        
+        export default function Header() {
+            return (
     <HeaderWrapper>
-        <div className='logoWrapper'>
-            <h1>BPOFGAMING</h1>
-        </div>
-        <div className='navbarWrapper'>
-            <Navbar/>
+        <div className='placeholderHeader'></div>
+        <div className='fixedHeader'>
+            <div className='logoWrapper'>
+                <h1>BPOFGAMING</h1>
+            </div>
+            <div className='navbarWrapper'>
+                <Navbar/>
+            </div>
         </div>
     </HeaderWrapper>
   )

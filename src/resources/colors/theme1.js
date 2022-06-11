@@ -1,8 +1,8 @@
 const theme1= {
     BackgroundColor: "rgb(0,0,0)",
-    SecondaryColor: "rgb(89,99,255)",
+    SecondaryColor: "#4B90FD",
     AccentColor: "rgb(248,248,255)",
-    HoverColor: "rgb(248,248,255)"
+    HoverColor: "#4B90FD"
 }
 
 export default theme1;

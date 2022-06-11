@@ -6,8 +6,10 @@ import instagramLogo from  "../resources/images/instagram.svg"
 import twitterLogo from "../resources/images/twitter.svg"
 import telegramLogo from "../resources/images/telegram.svg"
 import discordLogo from "../resources/images/discord.svg"
+import bpof_logo from "../resources/images/BPOF_logo.svg"
+import LandingBackground from '../resources/images/landing_background_small.jpg'
 
-const LandingWrapper =  styled.div`
+const LandingWrapper =  styled.div.attrs({id:"LandingSection"})`
     *{
         margin: 0;
         padding: 0;
@@ -15,7 +17,9 @@ const LandingWrapper =  styled.div`
     position: relative;
     width: 100%;
     height: 800px;
-    background: rgb(0,0,100);
+    background: url(${LandingBackground});
+    background-size: cover;
+    background-position: center;
     >.mintButton{
         position: absolute;
         top: 30px;
@@ -24,13 +28,17 @@ const LandingWrapper =  styled.div`
         background: ${theme1.AccentColor};
         font-size: 25px;
         color: ${theme1.BackgroundColor};
+        @media screen and (max-width: 500px){
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
     >.landingText{
         position: relative;
         top:  50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        max-width: 250px;
+        max-width: 300px;
         color: ${theme1.AccentColor};
         div:nth-child(1){
             width: 100%;
@@ -38,7 +46,9 @@ const LandingWrapper =  styled.div`
             font-size: 40px;
             font-weight: 1000;
             letter-spacing: 10px;
-            
+            >img{
+                width: 100%;
+            } 
         }
         div:nth-child(2){
             width: 100%;
@@ -78,6 +88,38 @@ const LandingWrapper =  styled.div`
                 }
             }
         }
+
+
+
+        @media screen and (max-width: 500px){
+            top: 85%;
+            left: 50%;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            transform: translate(-50%,0);
+            >div{
+                writing-mode: horizontal-tb;
+                margin-right: 0px;
+                margin-bottom: 10px;
+            }
+            >ul{
+                display: flex;
+                justify-content: start;
+                margin-top: 0px;
+                >li{
+                    text-align: center;
+                    margin: 0 5px;
+                    >a{
+                        display: inline-block;
+                        width: 40px;
+                        >img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 `
 
@@ -90,7 +132,7 @@ export default function LandingSection() {
         </div>
 
         <div className='landingText'>
-            <div>BPOF</div>
+            <div><img src={bpof_logo} alt="bpof logo" /></div>
             <div>be part of the future gaming</div>
         </div>
 

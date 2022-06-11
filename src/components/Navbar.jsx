@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import theme1 from '../resources/colors/theme1'
 import useWindowWidth from '../customHooks/useWindowWidth'
-
+import menuIcon from '../resources/images/menu_icon.svg'
+import closeIcon from '../resources/images/close_icon.svg'
 
 const NavbarWrapperAbove900 = styled.div`
     position: relative;
@@ -25,7 +26,7 @@ const NavbarWrapperAbove900 = styled.div`
                     color: ${theme1.AccentColor};
                     padding: 15px 0;
                     :hover{
-                        color: gray;
+                        color: ${theme1.HoverColor};
                     }
                 }
             }
@@ -36,7 +37,7 @@ const NavbarWrapperAbove900 = styled.div`
                     padding: 5px 15px;
                     border-radius: 2px;
                     :hover{
-                        color: gray;
+                        color: ${theme1.HoverColor};
                     }
                 }
             }
@@ -55,10 +56,12 @@ const NavbarWrapperBelow900 = styled.div`
         position: fixed;
         width: 300px;
         height: 100vh;
-        top: 0;
-        left: 0;
+        top: 0px;
+        right: 0;
         background: ${theme1.BackgroundColor};
         padding: 10px;
+        padding-top: 100px;
+        box-sizing: border-box;
         >ul{
             position: relative;
             display: flex;
@@ -77,6 +80,7 @@ const NavbarWrapperBelow900 = styled.div`
                 }
             }
             >.contrastingButton{
+
                 >a{
                     background: ${theme1.AccentColor};
                     color: ${theme1.BackgroundColor};
@@ -90,29 +94,67 @@ const NavbarWrapperBelow900 = styled.div`
         }
     }
     >.buttonWrapper{
+        z-index: 5;
+        @keyframes menu_animation {
+            0% {transform: rotate(0deg)}
+            25% {transform: rotate(7deg)}
+            50% {transform: rotate(-7deg)}
+            100% {transform: rotate(0deg)}
+        }
+        >button{
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+            >img{
+                width: 100%;
+            }
+            :hover{
+                animation: menu_animation;
+                animation-duration: 0.8s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
 
+
+                cursor: pointer;
+            }
+        }
     }
 `
 
 const NavbarContent = ({initialVisibility})=>{
 
+    const windowWidth  = useWindowWidth();
+    
     const [visible,setVisible] = useState(initialVisibility);
 
+    useEffect(()=>{
+        const f = (e)=>{
+            // console.log(e.target.classList);
+            if(e.target.classList.contains("link") && windowWidth<=900){
+                setVisible(false);
+            }
+        }
+        document.addEventListener("click",f);
+        return ()=>{document.removeEventListener("click",f)}
+    },[])
+    
 
     return (
         <>
         {visible?
-        <div className='contentWrapper'>
+        <div className='contentWrapper' >
                 <ul>
-                    <li><a href='ceva'>ROADMAP</a></li>
-                    <li><a href='ceva'>STACKING</a></li>
-                    <li><a href='ceva'>OUR TEAM</a></li>
-                    <li><a href='ceva'>FAQ</a></li>
-                    <li className='contrastingButton'><a href='ceva'>CONNECT A WALLET</a></li>
+                    <li><a href='/#RoadmapSection' className='link'>ROADMAP</a></li>
+                    <li><a href='/#StackingSection' className='link'>STACKING</a></li>
+                    <li><a href='/#TeamSection' className='link'>OUR TEAM</a></li>
+                    <li><a href='/#FaqSection' className='link'>FAQ</a></li>
+                    <li className='contrastingButton'><a href='#'>CONNECT A WALLET</a></li>
                 </ul>
         </div>:<></>}
         <div className='buttonWrapper'>
-            <button onClick={()=>{setVisible(!visible)}}>buton</button>
+            <button onClick={()=>{setVisible(!visible)}}>{visible?<img src={closeIcon}/>:<img src={menuIcon}/>}</button>
         </div>
         </>
     )

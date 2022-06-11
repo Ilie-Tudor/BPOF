@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import theme1 from '../resources/colors/theme1'
 import HeadlineBackgroud from '../resources/images/Headline.svg'
 
-
 const HeadlineWrapper = styled.div`
     position: relative;
     max-width: 400px;
@@ -18,10 +17,16 @@ const HeadlineWrapper = styled.div`
     background-size: contain;
     >div{
         margin: 0 30px;
-        padding-bottom: 12px;
-        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-top: 12px;
         font-size: 30px;
         color: ${theme1.AccentColor};
+    }
+    @media screen and (max-width: 400px){
+      >div{
+        font-size: 25px;
+        /* background: red; */
+      }
     }
 `
 

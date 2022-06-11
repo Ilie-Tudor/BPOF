@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import theme1 from '../resources/colors/theme1'
 
+import FounderImg from '../resources/images/team_icon_founder_1.svg'
 
 const CardWrapper = styled.div`
     width: 200px;
@@ -13,7 +14,14 @@ const CardWrapper = styled.div`
         width: 150px;
         height: 150px;
         margin: auto;
-        background: blue;
+        background: transparent;
+        >img{
+          position: absolute;
+          width: 175px;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);          
+        }
     }
     >.nameWrapper{
       text-align: center;
@@ -37,7 +45,7 @@ const CardWrapper = styled.div`
 export default function TeamMemberCard({picture,name,job,description}) {
   return (
       <CardWrapper>
-        <div className='pictureWrapper'>poza</div>
+        <div className='pictureWrapper'><img src={FounderImg} alt="Founder Icon" /></div>
         <div className='nameWrapper'>{name}</div>
         <div className='jobWrapper'>- {job} -</div>
         <div className='descriptionWrapper'>{description}</div>
