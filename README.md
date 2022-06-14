@@ -32,7 +32,7 @@ The main technologies used were nextJS (for the frontend), Rust (for the smart c
 ### Backlog:
 For generating and managing the backlog we used trello: https://trello.com/b/g7e7RBmk/agile-sprint-board
 ### Source control:
-For source control we used GitHub. The frontend of the application is hosted at this repository --insert repo here--. The smart contract are deployed on chain and therefore publicly visible and the backend rng server code will just be showcased on a private GitHub account/ locally, because the future application security depends on the fact that the server code is not public.
+For source control we used GitHub. The frontend of the application is hosted at this repository https://github.com/Ilie-Tudor/BPOF/tree/v0.01 . The smart contract are deployed on chain and therefore publicly visible and the backend rng server code will just be showcased on a private GitHub account/ locally, because the future application security depends on the fact that the server code is not public.
 
 
 ### Bug Reporting:
