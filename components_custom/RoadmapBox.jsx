@@ -100,15 +100,15 @@ export default function RoadmapBox({children, customStyle, videoPosition, videoS
           <span>STAGE {quarterNumber}</span>
           {videoPosition=="right"?
           <video className='roadmapVideo' id="right" autoPlay loop  muted >
-              <source src={Videosrc} type="video/mp4" />
+              <source src={videoSrc} type="video/mp4" />
           </video>
           :(videoPosition=="left"?
           <video className='roadmapVideo' id="left" autoPlay loop  muted >
-              <source src={Videosrc} type="video/mp4" />
+              <source src={videoSrc} type="video/mp4" />
           </video>
           :
           <video className='roadmapVideo' autoPlay loop  muted >
-              <source src={Videosrc} type="video/mp4" />
+              <source src={videoSrc} type="video/mp4" />
           </video>)}
       </BoxWrapper>
   )
