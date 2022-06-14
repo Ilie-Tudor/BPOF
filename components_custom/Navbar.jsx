@@ -157,6 +157,7 @@ const NavbarContent = ({initialVisibility})=>{
                     <li><a href='/#StackingSection' className='link'>STACKING</a></li>
                     <li><a href='/#TeamSection' className='link'>OUR TEAM</a></li>
                     <li><a href='/#FaqSection' className='link'>FAQ</a></li>
+                    <li><a href='/stacking' className='link'>TODAY RESULTS</a></li>
                     <li className='contrastingButton'>
                         <ChakraProvider>
                             <HeaderMenuButtons enabled={['auth', 'about']} />
