@@ -1,0 +1,62 @@
+[
+    {
+        "wallet": 4,
+        "percent": 0.15,
+        "today_stack": 3000,
+        "total_stack": 23000
+    },
+    {
+        "wallet": 9,
+        "percent": 0.05,
+        "today_stack": 100,
+        "total_stack": 2100
+    },
+    {
+        "wallet": 1,
+        "percent": 0.1,
+        "today_stack": 1000,
+        "total_stack": 11000
+    },
+    {
+        "wallet": 7,
+        "percent": 0.1,
+        "today_stack": 700,
+        "total_stack": 7700
+    },
+    {
+        "wallet": 6,
+        "percent": 0.1,
+        "today_stack": 1000,
+        "total_stack": 11000
+    },
+    {
+        "wallet": 8,
+        "percent": 0.2,
+        "today_stack": 600,
+        "total_stack": 3600
+    },
+    {
+        "wallet": 3,
+        "percent": 0.18,
+        "today_stack": 18000,
+        "total_stack": 118000
+    },
+    {
+        "wallet": 2,
+        "percent": 0.05,
+        "today_stack": 50,
+        "total_stack": 1050
+    },
+    {
+        "wallet": 10,
+        "percent": 0.05,
+        "today_stack": 0,
+        "total_stack": 12550
+    },
+    {
+        "wallet": 5,
+        "percent": 0.02,
+        "today_stack": 0,
+        "total_stack": 5000
+    }
+]
