@@ -17,8 +17,8 @@ const StackingWrapper = styled.div`
         max-width: 900px;
         /* background: red; */
         margin: auto;
-        top: 50%;
-        transform: translateY(-50%);
+        padding-top: 50px;
+        /* transform: translateY(-50%); */
         >.line{
             margin-bottom: 20px;
             border-bottom: 1px solid white;
