@@ -36,7 +36,7 @@ const StackingWrapper = styled.div`
 export default function stacking() {
 
 
-    const [stackingInfo, setStackingInfo] = useState([])
+    const [stackingInfo, setStackingInfo] = useState<any[]>([])
 
     useEffect(() => {
       fetch('/stacking.json')
@@ -54,7 +54,7 @@ export default function stacking() {
         <StackingWrapper>
             <ul>
                 <li className='title'>Stacking Results</li>
-                {stackingInfo.map((elem)=><li className='line' key={elem.wallet}>wallet:{elem.wallet} <br/><br/> percent:{elem.percent} &nbsp;&nbsp;today_stack:{elem.today_stack} &nbsp;&nbsp;total_stack:{elem.total_stack} </li>)}
+                {stackingInfo.map((elem)=><li className='line' key={elem?.wallet}>wallet:{elem?.wallet} <br/><br/> percent:{elem.percent} &nbsp;&nbsp;today_stack:{elem.today_stack} &nbsp;&nbsp;total_stack:{elem.total_stack} </li>)}
             </ul>
         </StackingWrapper>
     )
