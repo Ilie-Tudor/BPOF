@@ -5,8 +5,13 @@ import Headline from './Headline'
 import TeamMemberCard from './TeamMemberCard'
 
 let TeamBackground = '/resources/images/stars_background.jpg'
-
-
+let FounderIcon = '/resources/images/Founder.png'
+let Developer1Icon = '/resources/images/Developer1.png'
+let Developer2Icon = '/resources/images/Developer2.png'
+let Marketing1Icon = '/resources/images/Marketing1.png'
+let Marketing2Icon = '/resources/images/Marketing2.png'
+let Marketing3Icon = '/resources/images/Marketing3.png'
+let GraphicIcon = '/resources/images/Graphic.png'
 const TeamWrapper = styled.div.attrs({id:"TeamSection"})`
     /* overflow: auto; */
     background: ${theme1.BackgroundColor};
@@ -71,21 +76,21 @@ export default function TeamSection() {
                 OUR TEAM
             </Headline>
             <CardsWrapper>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
-            
-                
+                <TeamMemberCard imgSrc={FounderIcon} name={"Rares-Petru Stan"} job={"Co-Founder"} description={`CEO of a Real-Estate Development Company
+                                                                                            Business Representative & Advisor
+                                                                                            Computer Science Engineer keen to develop any futuristic business concept by appliying traditional as well as modern methods.`}/>
+                <TeamMemberCard imgSrc={FounderIcon} name={"Cristian Chiata"} job={"Co-Founder"} description={`CEO of an IoT Company that provides software automation solutions and hardware equipment with business studies in London.
+                                                                                            Co-Owner and Marketing Manager of a Horeca and Entertainment Company.`}/>
+                <TeamMemberCard imgSrc={Developer2Icon} name={"Mara Culda"} job={"Development lead"} description={"UX Software Developer with strong interest in business, creative processes and blockchain with studies in Computer Science & Business."}/>
+                <TeamMemberCard imgSrc={Developer1Icon} name={"Andrei Rohatin"} job={"Chief Technical Operator"} description={"Blockchain developer being on a neverending learning spree with studies in Computer Science."}/>
+                <TeamMemberCard imgSrc={Marketing1Icon} name={"Eduard Toth"} job={"Marketing Manager"} description={"I believe there is more in marketing than promoting products/services. When done right, it brings people together, generates new ideas and creates astonishing communities. That is my philosophy on marketing and I have practiced it for the past 3 years."}/>
+                <TeamMemberCard imgSrc={GraphicIcon} name={"Luca Stan"} job={"Graphic Designer "} description={"Designer with a great passion for emerging art and technology and fine art and engineering studies. "}/>
+                <TeamMemberCard imgSrc={Developer1Icon} name={"Serban Filote"} job={"Software Developer"} description={"Developer with a zeal for innovation, cryptocurrencies and gaming with studies in Computer Science."}/>
+                <TeamMemberCard imgSrc={Developer1Icon} name={"Vlad Miu"} job={"Game Development Team Lead"} description={"The worst thing a person can say about his responsibilities is that they are too hard. The worst thing a person can say about a game is that it's too easy."}/>
+                <TeamMemberCard imgSrc={GraphicIcon} name={"Marko Art "} job={"Graphic Designer"} description={"Experienced artist in digital and traditional art experimenting with all forms of art that helps with self expression. It's my mission to create content you will love."}/>
+                <TeamMemberCard imgSrc={Developer1Icon} name={"Ilie Tudor"} job={"FrontEnd and DevOps lead"} description={"Software Developer that has a strong interest in business, blockchain and product development with studies in Computer Science."}/>
                 {showAll?
                 <>
-                <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
                 <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
                 <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
                 <TeamMemberCard name={"Gigel Frone"} job={"job title"} description={"ceva descriere acilea"}/>
@@ -97,7 +102,7 @@ export default function TeamSection() {
 
             
             </CardsWrapper>
-            <ExpandBtn onClick={()=>{setShowAll(!showAll)}}>{showAll?"Hide entire team":"Show entire team"} <div  className={showAll?'expanded':'collapsed'}></div></ExpandBtn>
+            <ExpandBtn onClick={()=>{setShowAll(!showAll)}}>{showAll?"Hide":"Show"} <div  className={showAll?'expanded':'collapsed'}></div></ExpandBtn>
         </TeamWrapper>
     )
 }

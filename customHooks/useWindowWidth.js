@@ -13,10 +13,7 @@ function useWindowWidth(){
         setWidth(window.innerWidth)
         return () => window.removeEventListener("resize", HandleResize)
     },[])
-    useEffect(()=>{
-        console.log("Aaa", width)
-
-    },[width])
+   
 
     return width;
 }

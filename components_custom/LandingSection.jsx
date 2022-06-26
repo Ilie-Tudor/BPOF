@@ -22,15 +22,19 @@ const LandingWrapper =  styled.div.attrs({id:"LandingSection"})`
     background-position: center;
     >.mintButton{
         position: absolute;
+        width: 250px;
         top: 30px;
         left: 30px;
         padding: 5px 15px;
-        background: ${theme1.AccentColor};
         font-size: 25px;
         color: ${theme1.BackgroundColor};
+        >img{
+            width: 100%;
+        }
         @media screen and (max-width: 500px){
             left: 50%;
             transform: translateX(-50%);
+            
         }
     }
     >.landingText{
@@ -129,7 +133,7 @@ export default function LandingSection() {
     <LandingWrapper>
         <div  className='mintButton'>
             
-            <a href="/mint"><div>MINT</div></a>
+            <a href="#"><img src="/resources/images/GameButton.svg" alt="game button" /></a>
         </div>
 
         <div className='landingText'>
@@ -140,7 +144,7 @@ export default function LandingSection() {
         <div className='socialBar'>
             <div>FIND US ON</div>
             <ul>
-                <li><a href="https://discord.com/"><img src={discordLogo} alt="discord logo" /></a></li>
+                <li><a href="https://discord.gg/T4jv3VNE"><img src={discordLogo} alt="discord logo" /></a></li>
                 <li><a href="https://discord.com/"><img src={instagramLogo} alt="instagram logo" /></a></li>
                 <li><a href="https://discord.com/"><img src={telegramLogo} alt="telegram logo" /></a></li>
                 <li><a href="https://discord.com/"><img src={twitterLogo} alt="twitter logo" /></a></li>

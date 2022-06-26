@@ -15,7 +15,7 @@ let StackingBackground = '/resources/images/stars_background.jpg'
 const StackingWrapper = styled.div.attrs({id:"StackingSection"})`
     background: ${theme1.BackgroundColor};
     background: url(${StackingBackground});
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     padding: 80px 0;
 `
@@ -29,14 +29,21 @@ const Content = styled.div`
       >img{
         position: relative;
         width: 100%;
-        @media screen and (max-width: 1000px){
+        @media screen and (max-width: 1200px){
           width: 600px;
           left: 50%;
           transform: translateX(-50%);
         }
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 620px){
           width: 100%;
-          max-width: 320px;
+          max-width: 420px;
+          box-sizing: border-box;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @media screen and (max-width: 450px){
+          width: 100%;
+          max-width: 300px;
           box-sizing: border-box;
           left: 50%;
           transform: translateX(-50%);
@@ -51,23 +58,32 @@ const Content = styled.div`
         height: 40%;
         display: flex;
         justify-content: center;
-        @media screen and (max-width: 1000px){
-          top: 11%;
+        @media screen and (max-width: 1200px){
+          top: 12%;
+          flex-direction: column;
+          height: auto;
+          width: 330px;
+          left: 50%;
+          transform: translateX(-50%);
+          
+        }
+        @media screen and (max-width: 620px){
+          top: 12%;
           flex-direction: column;
           height: auto;
           width: 230px;
           left: 50%;
           transform: translateX(-50%);
-          
+          font-size: 80%;
         }
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 450px){
           top: 11%;
           flex-direction: column;
           height: auto;
-          width: 130px;
+          width: 190px;
           left: 50%;
           transform: translateX(-50%);
-          
+          font-size: 80%;
         }
         
         >div{
@@ -77,17 +93,21 @@ const Content = styled.div`
           box-sizing: border-box;
           text-align: center;
           color: white;
-          @media screen and (max-width: 1000px){
+          @media screen and (max-width: 1200px){
             width: 100%;
             height: 300px;
-            margin-bottom: 350px;
+            margin-bottom: 550px;
           }
-          @media screen and (max-width: 600px){
+          @media screen and (max-width: 620px){
             width: 100%;
             height: 300px;
-            margin-bottom: 45px;
+            margin-bottom: 270px;
           }
-          
+          @media screen and (max-width: 450px){
+            width: 100%;
+            height: 240px;
+            margin-bottom: 168px;
+          }
         }
       }
     }
@@ -103,12 +123,12 @@ export default function StackingSection() {
       <Content>
         <div>
             <div>
-              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, itaque!</div>
-              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, itaque!</div>
-              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, itaque!</div>
+              <div>Each person will receive a 2-20% random return a week, until we reach a total of 10% return - Phase I holders</div>
+              <div>Each person will receive a 2-20% random return a week, until we reach a total of 10% return - Phase II holders & 1-10% random return a week until we reach a total of 5% return - Phase I holders only; Cumulated total of 15% return.</div>
+              <div>Each person will receive a 2-20% random return a week, until we reach a total of 10% return - Phase III holders & 2-20% random return a week until we reach a total of 10% return - Phase I holders only; Cumulated total of 20% return.</div>
             </div>
             {
-              windowWidth>1000?
+              windowWidth>1200?
               <img src={Stacking} alt="stacking section wrapper" />
               :
               <img src={Stacking_small} alt="stacking section wrapper" />

@@ -99,7 +99,7 @@ export default function RoadmapSection() {
         {windowWidth>1200?
         <BoxesWrapper>
           <div>
-            <RoadmapBox customStyle={{left: "10%"}} videoPosition="right" quarterNumber="1" videoSrc='/resources/videos/3.mp4'>
+            <RoadmapBox customStyle={{left: "10%"}} videoPosition="right" quarterNumber="1" videoSrc='/resources/videos/1.mp4'>
                 <Q1_content/>
             </RoadmapBox>
             <RoadmapBox customStyle={{left: "90%", transform: "translateX(-100%)"}} videoPosition="left" quarterNumber="2" videoSrc='/resources/videos/2.mp4'>
@@ -108,15 +108,16 @@ export default function RoadmapSection() {
             <RoadmapBox customStyle={{left: "10%"}} videoPosition="right" quarterNumber="3"  videoSrc='/resources/videos/3.mp4'>
                 <Q3_content/>
             </RoadmapBox>
-            <RoadmapBox customStyle={{left: "90%", transform: "translateX(-100%)"}} videoPosition="left" quarterNumber="4" videoSrc='/resources/videos/ceva.mp4'>
+            <RoadmapBox customStyle={{left: "90%", transform: "translateX(-100%)"}} videoPosition="none" quarterNumber="4" videoSrc=''>
                 <Q4_content/>
             </RoadmapBox>
+            
           </div>
         </BoxesWrapper>
         :
         <BoxesWrapper>
           <div>
-            <RoadmapBox customStyle={{left: "50%",transform: "translateX(-50%)"}} quarterNumber="1"  videoSrc='/resources/videos/3.mp4'>
+            <RoadmapBox customStyle={{left: "50%",transform: "translateX(-50%)"}} quarterNumber="1"  videoSrc='/resources/videos/1.mp4'>
               <Q1_content/>
             </RoadmapBox>
             <RoadmapBox customStyle={{left: "50%", transform: "translateX(-50%)"}} quarterNumber="2"  videoSrc='/resources/videos/2.mp4'>
@@ -125,12 +126,12 @@ export default function RoadmapSection() {
             <RoadmapBox customStyle={{left: "50%", transform: "translateX(-50%)"}} quarterNumber="3" videoSrc='/resources/videos/3.mp4'>
               <Q3_content/>
             </RoadmapBox>
-            <RoadmapBox customStyle={{left: "50%", transform: "translateX(-50%)"}} quarterNumber="4"  videoSrc='/resources/videos/ceva.mp4'>
+            <RoadmapBox customStyle={{left: "50%", transform: "translateX(-50%)"}} quarterNumber="4"  videoSrc='' videoPosition="none">
               <Q4_content/>
             </RoadmapBox>
-            
           </div>
         </BoxesWrapper>}
+        
     </RoadmapWrapper>
   )
 }

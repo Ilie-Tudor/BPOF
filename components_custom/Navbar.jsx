@@ -137,9 +137,9 @@ const NavbarContent = ({initialVisibility})=>{
     useEffect(()=>{
         const f = (e)=>{
             if(e.target.classList.contains("link") && windowWidth<=900){
-                console.log(e.target.classList);
-                console.log(windowWidth);
-                console.log(first.current)
+                // console.log(e.target.classList);
+                // console.log(windowWidth);
+                
                 setVisible(false);
             }
         }
@@ -150,6 +150,7 @@ const NavbarContent = ({initialVisibility})=>{
 
     return (
         <>
+        <ChakraProvider>
         {visible?
         <div className='contentWrapper' >
                 <ul>
@@ -157,16 +158,16 @@ const NavbarContent = ({initialVisibility})=>{
                     <li><a href='/#StackingSection' className='link'>STACKING</a></li>
                     <li><a href='/#TeamSection' className='link'>OUR TEAM</a></li>
                     <li><a href='/#FaqSection' className='link'>FAQ</a></li>
-                    <li><a href='/stacking' className='link'>TODAY RESULTS</a></li>
                     <li className='contrastingButton'>
-                        <ChakraProvider>
+                        
                             <HeaderMenuButtons enabled={['auth', 'about']} />
-                        </ChakraProvider></li>
+                    </li>
                 </ul>
         </div>:<></>}
         <div className='buttonWrapper'>
             <button onClick={()=>{setVisible(!visible)}}>{visible?<img src='/resources/images/close_icon.svg'/>:<img src='/resources/images/menu_icon.svg'/>}</button>
         </div>
+        </ChakraProvider>
         </>
     )
 }
@@ -176,7 +177,6 @@ const NavbarContent = ({initialVisibility})=>{
 export default function Navbar() {
     
     const windowWidth  = useWindowWidth();
-
 
     if(windowWidth>900)
         return (

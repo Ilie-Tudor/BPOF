@@ -39,7 +39,7 @@ export default function Footer() {
   return (
     <FooterWrapper>
         <div className='whitepaperWrapper'>
-            <a href={LitePaper}>WHITEPAPER</a>
+            <a href={LitePaper}>LITEPAPER</a>
         </div>
         <div className='copyrightWrapper'>
             <div>&copy; BPOF 2022 ALL RIGHTS RESERVED</div> 

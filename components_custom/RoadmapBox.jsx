@@ -68,13 +68,49 @@ const BoxWrapper = styled.div`
         }
 
     }
+    >.aditionalContent{
+        position: absolute;
+        cursor: pointer;
+        /* right: 32%; */
+        /* left: 132%; */
+        width: 300px;
+        top: 57%;
+        transform: translate(-50%,-50%);
+        @media screen and (max-width: 1400px){
+          width: 500px;
+        }
+        
+        @media screen and (max-width: 1200px){
+          top: 100%;
+          left: 50%;
+          width: 450px;
+          transform: translate(-50%, 0%);
+        }
+        @media screen and (max-width: 550px){
+          top: 100%;
+          left: 50%;
+          width: 300px;
+        }
+        left: -60%;
+        @media screen and (max-width: 1420px){
+          left: -50%;
+        }
+        @media screen and (max-width: 1300px){
+          left: -36%;
+        }
+        @media screen and (max-width: 1200px){
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+    }
     >#left{
-      right: 60%;
+      left: -60%;
       @media screen and (max-width: 1420px){
-        right: 50%;
+        left: -50%;
       }
       @media screen and (max-width: 1300px){
-        right: 36%;
+        left: -36%;
       }
     }
     >#right{
@@ -106,10 +142,12 @@ export default function RoadmapBox({children, customStyle, videoPosition, videoS
           <video className='roadmapVideo' id="left" autoPlay loop  muted >
               <source src={videoSrc} type="video/mp4" />
           </video>
+          :(videoPosition=="none"?
+          <a href='https://thundering-thunbergia-913.notion.site/Lite-Paper-c052561ec7f74cfe915a9807bdae687d' className='aditionalContent'><img src="/resources/images/LitepaperButton.svg" alt="litepaper" /></a>
           :
           <video className='roadmapVideo' autoPlay loop  muted >
               <source src={videoSrc} type="video/mp4" />
-          </video>)}
+          </video>))}
       </BoxWrapper>
   )
 }
